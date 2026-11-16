@@ -81,7 +81,67 @@ html[lang="ru"] #legend [data-book-lang="ru"],html[lang="de"] #legend [data-book
 #legend .legend-real-photo {max-width:650px;margin:34px auto;text-align:center;color:#e5ca92}
 #legend .legend-real-photo img {display:block;width:100%;height:auto;border:7px solid #a9814d;box-shadow:0 8px 25px #0009;filter:sepia(.18)}
 #legend .legend-real-photo figcaption {font-size:14px;margin-top:12px}
-</style><style id="song-placement-style">#song.dragon-song{padding:20px 16px 27px;margin:0;background:#211b17;border-top:0;border-bottom:1px solid #76543f}#song .dragon-song-inner{max-width:1120px;margin:auto;text-align:center}#song .dragon-song-kicker,#song #song-title,#song #song-description{display:none}#song .gram-open{margin:0 auto;display:inline-block}</style><style id="fullscreen-gallery-style">.photo-grid .photo img{cursor:zoom-in}.pd-lightbox[hidden]{display:none!important}.pd-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(8,6,5,.97);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:48px 65px 58px;box-sizing:border-box}.pd-lightbox img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 8px 35px #0008;cursor:zoom-in}.pd-lightbox img.pd-zoomed{max-width:none;max-height:none;cursor:zoom-out}.pd-image-frame{width:100%;height:100%;overflow:auto;display:flex;align-items:center;justify-content:center}.pd-lightbox button{position:absolute;border:1px solid #cba65e;background:#241b14e8;color:#f4d99e;border-radius:8px;cursor:pointer;font-size:26px;min-width:44px;min-height:44px}.pd-lightbox button:hover{background:#59402b}.pd-close{right:15px;top:12px}.pd-prev{left:10px;top:48%}.pd-next{right:10px;top:48%}.pd-caption{position:absolute;bottom:12px;left:55px;right:55px;text-align:center;color:#f3dfb8;font:16px Georgia,serif}.pd-zoom-hint{position:absolute;top:16px;left:18px;color:#e4d0a8;font:13px Georgia,serif}@media(max-width:700px){.pd-lightbox{padding:52px 8px 65px}.pd-prev,.pd-next{top:auto;bottom:10px}.pd-prev{left:12px}.pd-next{right:12px}.pd-caption{bottom:24px;left:65px;right:65px;font-size:13px}.pd-zoom-hint{font-size:11px}}</style></head><body><header><nav><a class="brand" href="#top">✦ <span data-i18n="brand">Приют Дракона</span></a><div class="navlinks"><a data-i18n="navAbout" href="#about">О доме</a><a data-i18n="navDetails" href="#details">Удобства</a><a data-i18n="navGallery" href="#gallery">Фотографии</a><a data-i18n="navBooking" href="#booking">Бронирование</a><div class="langs"><button class="active" id="ru" type="button">RU</button><button id="de" type="button">DE</button></div></div></nav></header>
+</style><style id="song-placement-style">#song.dragon-song{padding:20px 16px 27px;margin:0;background:#211b17;border-top:0;border-bottom:1px solid #76543f}#song .dragon-song-inner{max-width:1120px;margin:auto;text-align:center}#song .dragon-song-kicker,#song #song-title,#song #song-description{display:none}#song .gram-open{margin:0 auto;display:inline-block}</style><style id="fullscreen-gallery-style">.photo-grid .photo img{cursor:zoom-in}.pd-lightbox[hidden]{display:none!important}.pd-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(8,6,5,.97);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:48px 65px 58px;box-sizing:border-box}.pd-lightbox img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 8px 35px #0008;cursor:zoom-in}.pd-lightbox img.pd-zoomed{max-width:none;max-height:none;cursor:zoom-out}.pd-image-frame{width:100%;height:100%;overflow:auto;display:flex;align-items:center;justify-content:center}.pd-lightbox button{position:absolute;border:1px solid #cba65e;background:#241b14e8;color:#f4d99e;border-radius:8px;cursor:pointer;font-size:26px;min-width:44px;min-height:44px}.pd-lightbox button:hover{background:#59402b}.pd-close{right:15px;top:12px}.pd-prev{left:10px;top:48%}.pd-next{right:10px;top:48%}.pd-caption{position:absolute;bottom:12px;left:55px;right:55px;text-align:center;color:#f3dfb8;font:16px Georgia,serif}.pd-zoom-hint{position:absolute;top:16px;left:18px;color:#e4d0a8;font:13px Georgia,serif}@media(max-width:700px){.pd-lightbox{padding:52px 8px 65px}.pd-prev,.pd-next{top:auto;bottom:10px}.pd-prev{left:12px}.pd-next{right:12px}.pd-caption{bottom:24px;left:65px;right:65px;font-size:13px}.pd-zoom-hint{font-size:11px}}</style>
+<style id="mobile-storybook-fix">
+/* Mobile only: preserve the entire illustrated spread at its natural ratio,
+   then show the readable story on parchment below the illustration. */
+@media (max-width:720px) {
+ #legend .legend-book.illustrated-book {
+   width:100%!important; height:auto!important; min-height:0!important;
+   aspect-ratio:auto!important; padding:0!important;
+   padding-top:66.6667%!important; margin:20px auto 0!important;
+   background-size:100% auto!important; background-position:center top!important;
+   background-repeat:no-repeat!important; background-color:#e8d1a1!important;
+   border:0!important; overflow:hidden!important;
+ }
+ #legend .illustrated-book .storybook-language {
+   position:static!important; height:auto!important; pointer-events:auto!important;
+ }
+ #legend .illustrated-book .storybook-spread,
+ #legend .illustrated-book .storybook-spread.is-active {
+   position:relative!important; inset:auto!important; height:auto!important;
+   min-height:0!important; grid-template-columns:minmax(0,1fr)!important;
+   padding:0!important; background:#f0dbad!important;
+ }
+ #legend .illustrated-book .storybook-spread:not(.is-active) {display:none!important}
+ #legend .illustrated-book .storybook-spread.is-active {display:grid!important}
+ #legend .illustrated-book .book-page,
+ #legend .illustrated-book .book-page-left,
+ #legend .illustrated-book .book-page-right {
+   position:relative!important; height:auto!important; min-height:0!important;
+   display:block!important; padding:0!important; margin:0!important;
+   background:transparent!important;
+ }
+ #legend .illustrated-book .book-page-left:empty {display:none!important}
+ #legend .illustrated-book .book-legend-heading {
+   position:static!important; width:auto!important; margin:0!important;
+   padding:18px 18px 0!important; font-size:23px!important;
+   line-height:1.3!important; color:#4d2c16!important;
+ }
+ #legend .illustrated-book .book-page-right .book-ink-text,
+ #legend .illustrated-book .book-page-right .book-ink-text.book-short,
+ #legend .illustrated-book .book-page-right .book-ink-text.book-medium,
+ #legend .illustrated-book .book-page-right .book-ink-text.book-long {
+   position:static!important; left:auto!important; top:auto!important;
+   width:auto!important; height:auto!important; max-height:none!important;
+   display:block!important; padding:18px 20px 20px!important;
+   margin:0!important; overflow:visible!important;
+   font:normal 17px/1.65 Georgia,serif!important;
+   color:#382519!important; overflow-wrap:break-word!important;
+ }
+ #legend .illustrated-book .storybook-controls {
+   position:relative!important; left:auto!important; right:auto!important;
+   bottom:auto!important; margin:0!important; padding:12px 8px 16px!important;
+   border-radius:0!important; background:#352116!important;
+   display:flex!important; flex-wrap:wrap!important; gap:10px!important;
+ }
+ #legend .illustrated-book .storybook-controls button {
+   font-size:15px!important; padding:10px 12px!important;
+ }
+ #legend .illustrated-book .storybook-counter {color:#f7e4bc!important;min-width:52px!important}
+}
+</style>
+</head><body><header><nav><a class="brand" href="#top">✦ <span data-i18n="brand">Приют Дракона</span></a><div class="navlinks"><a data-i18n="navAbout" href="#about">О доме</a><a data-i18n="navDetails" href="#details">Удобства</a><a data-i18n="navGallery" href="#gallery">Фотографии</a><a data-i18n="navBooking" href="#booking">Бронирование</a><div class="langs"><button class="active" id="ru" type="button">RU</button><button id="de" type="button">DE</button></div></div></nav></header>
 <main id="top"><section class="hero"><div><div aria-hidden="true" class="emblem">🐉</div><div class="eyebrow" data-i18n="location">Зеленоградск (<span class="historic-date">с 1252г по 1946г</span> <span class="historic-name">Cranz</span>) · Балтийское море</div><h1 data-i18n="brand">Приют Дракона</h1><p data-i18n="hero">Место, где встречаются близкие. Уютный гостевой дом для семейных встреч и отдыха на Балтийском побережье.</p><div class="buttons"><a class="button" data-i18n="cta" href="#booking">Узнать о бронировании</a><a class="button secondary" data-i18n="photos" href="#gallery">Посмотреть фотографии</a></div></div></section>
 <section class="wrap" id="about"><div class="eyebrow" data-i18n="welcome">Добро пожаловать</div><h2 data-i18n="aboutTitle">Время, проведённое вместе</h2><p class="intro" data-i18n="about">«Приют Дракона» расположен в Зеленоградске — приморском городе на Балтийском море. Мы рады гостям, которые приезжают отдыхать и встречаться с родными из разных городов и стран.</p><div class="grid"><article class="tile"><div class="symbol">👨‍👩‍👧‍👦</div><h3 data-i18n="card1Title">Семейные встречи</h3><p data-i18n="card1">Для близких, которые хотят собраться вместе и провести несколько незабываемых дней.</p></article><article class="tile"><div class="symbol">🏡</div><h3 data-i18n="card2Title">6 мест + до 2 дополнительных</h3><p data-i18n="card2">Дом сдаётся только целиком, без посторонних гостей. Шесть основных мест, до восьми человек по согласованию и с доплатой.</p></article><article class="tile"><div class="symbol">🌊</div><h3 data-i18n="card3Title">Балтийское побережье</h3><p data-i18n="card3">Прогулки по Зеленоградску, морской воздух и возможность провести время с семьёй.</p></article></div></section>
 <section id="song" class="dragon-song" aria-label="Песня Приюта Дракона"><div class="dragon-song-inner"><div class="dragon-song-kicker" id="song-kicker">МУЗЫКА НАШЕГО ДОМА</div><h2 id="song-title">Песня «Приют Дракона»</h2><p id="song-description">О месте, где встречаются родные сердца.</p><button type="button" id="gram-open" class="gram-open">♫ Послушать песню</button><audio id="gram-audio" preload="metadata" src="priyut-drakona.mp3"></audio></div></section>
