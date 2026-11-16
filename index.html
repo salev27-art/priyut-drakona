@@ -259,8 +259,10 @@ document.getElementById('gram-open').onclick=e=>{opener=e.currentTarget;overlay.
 @media(prefers-reduced-motion:reduce){#legend .mobile-legend-leaf.active{animation:none}}
 /* Точная подгонка текста на мобильных страницах, не затрагивая обложку и ПК */
 @media(max-width:720px){
- #legend .mobile-legend-story-text{left:15%;right:26%;}
+ #legend .mobile-legend-story-text{left:12%;right:29%;}
  #legend .mobile-legend-story.mobile-legend-lower-text .mobile-legend-story-text{top:calc(17% + 18px);bottom:calc(29% - 18px);}
+ #legend .mobile-legend-leaf:nth-child(9) .mobile-legend-story-text,
+ #legend .mobile-legend-leaf:nth-child(10) .mobile-legend-story-text{top:calc(17% + 36px);bottom:calc(29% - 36px);}
 }
 </style>
 <script id="mobile-legend-pages-script">
