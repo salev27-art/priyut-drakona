@@ -236,4 +236,63 @@ document.getElementById('gram-open').onclick=e=>{opener=e.currentTarget;overlay.
 .gram-playing .gram-real-disc{animation-play-state:running}
 @media(max-width:560px){.gram-art-real{height:auto!important;margin:8px auto 12px!important;transform:none!important}}
 @media(prefers-reduced-motion:reduce){.gram-real-disc{animation:none!important}}
-</style><div class="pd-lightbox" id="pd-lightbox" hidden role="dialog" aria-modal="true" aria-label="Просмотр фотографии"><span class="pd-zoom-hint" id="pd-zoom-hint">Нажмите на фото для увеличения</span><button type="button" class="pd-close" aria-label="Закрыть">×</button><button type="button" class="pd-prev" aria-label="Предыдущее фото">‹</button><div class="pd-image-frame"><img id="pd-full-image" alt=""></div><button type="button" class="pd-next" aria-label="Следующее фото">›</button><div class="pd-caption" id="pd-caption"></div></div><script id="fullscreen-gallery-script">(()=>{const pictures=[...document.querySelectorAll('#gallery .photo-grid img')],box=document.getElementById('pd-lightbox'),full=document.getElementById('pd-full-image'),caption=document.getElementById('pd-caption'),hint=document.getElementById('pd-zoom-hint');let index=0,lastFocus=null,startX=null;const german=()=>document.documentElement.lang==='de';function render(){const pic=pictures[index];full.classList.remove('pd-zoomed');full.src=pic.currentSrc||pic.src;full.alt=pic.getAttribute(german()?'data-alt-de':'data-alt-ru')||pic.alt;caption.textContent=full.alt+' · '+(index+1)+' / '+pictures.length;hint.textContent=german()?'Foto anklicken zum Vergrößern':'Нажмите на фото для увеличения';box.querySelector('.pd-close').setAttribute('aria-label',german()?'Schließen':'Закрыть');box.querySelector('.pd-prev').setAttribute('aria-label',german()?'Vorheriges Foto':'Предыдущее фото');box.querySelector('.pd-next').setAttribute('aria-label',german()?'Nächstes Foto':'Следующее фото')}function open(i){index=i;lastFocus=document.activeElement;box.hidden=false;document.body.style.overflow='hidden';render();box.querySelector('.pd-close').focus()}function close(){box.hidden=true;document.body.style.overflow='';full.removeAttribute('src');if(lastFocus&&lastFocus.focus)lastFocus.focus()}function move(n){index=(index+n+pictures.length)%pictures.length;render()}pictures.forEach((p,i)=>{p.setAttribute('tabindex','0');p.setAttribute('role','button');p.addEventListener('click',()=>open(i));p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i)}})});box.querySelector('.pd-close').onclick=close;box.querySelector('.pd-prev').onclick=()=>move(-1);box.querySelector('.pd-next').onclick=()=>move(1);box.addEventListener('click',e=>{if(e.target===box||e.target.classList.contains('pd-image-frame'))close()});full.addEventListener('click',()=>full.classList.toggle('pd-zoomed'));document.addEventListener('keydown',e=>{if(box.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1)});box.addEventListener('touchstart',e=>{startX=e.changedTouches[0].screenX},{passive:true});box.addEventListener('touchend',e=>{if(startX===null)return;const delta=e.changedTouches[0].screenX-startX;if(Math.abs(delta)>55)move(delta>0?-1:1);startX=null},{passive:true})})();</script></body></html>
+</style><div class="pd-lightbox" id="pd-lightbox" hidden role="dialog" aria-modal="true" aria-label="Просмотр фотографии"><span class="pd-zoom-hint" id="pd-zoom-hint">Нажмите на фото для увеличения</span><button type="button" class="pd-close" aria-label="Закрыть">×</button><button type="button" class="pd-prev" aria-label="Предыдущее фото">‹</button><div class="pd-image-frame"><img id="pd-full-image" alt=""></div><button type="button" class="pd-next" aria-label="Следующее фото">›</button><div class="pd-caption" id="pd-caption"></div></div><script id="fullscreen-gallery-script">(()=>{const pictures=[...document.querySelectorAll('#gallery .photo-grid img')],box=document.getElementById('pd-lightbox'),full=document.getElementById('pd-full-image'),caption=document.getElementById('pd-caption'),hint=document.getElementById('pd-zoom-hint');let index=0,lastFocus=null,startX=null;const german=()=>document.documentElement.lang==='de';function render(){const pic=pictures[index];full.classList.remove('pd-zoomed');full.src=pic.currentSrc||pic.src;full.alt=pic.getAttribute(german()?'data-alt-de':'data-alt-ru')||pic.alt;caption.textContent=full.alt+' · '+(index+1)+' / '+pictures.length;hint.textContent=german()?'Foto anklicken zum Vergrößern':'Нажмите на фото для увеличения';box.querySelector('.pd-close').setAttribute('aria-label',german()?'Schließen':'Закрыть');box.querySelector('.pd-prev').setAttribute('aria-label',german()?'Vorheriges Foto':'Предыдущее фото');box.querySelector('.pd-next').setAttribute('aria-label',german()?'Nächstes Foto':'Следующее фото')}function open(i){index=i;lastFocus=document.activeElement;box.hidden=false;document.body.style.overflow='hidden';render();box.querySelector('.pd-close').focus()}function close(){box.hidden=true;document.body.style.overflow='';full.removeAttribute('src');if(lastFocus&&lastFocus.focus)lastFocus.focus()}function move(n){index=(index+n+pictures.length)%pictures.length;render()}pictures.forEach((p,i)=>{p.setAttribute('tabindex','0');p.setAttribute('role','button');p.addEventListener('click',()=>open(i));p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i)}})});box.querySelector('.pd-close').onclick=close;box.querySelector('.pd-prev').onclick=()=>move(-1);box.querySelector('.pd-next').onclick=()=>move(1);box.addEventListener('click',e=>{if(e.target===box||e.target.classList.contains('pd-image-frame'))close()});full.addEventListener('click',()=>full.classList.toggle('pd-zoomed'));document.addEventListener('keydown',e=>{if(box.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1)});box.addEventListener('touchstart',e=>{startX=e.changedTouches[0].screenX},{passive:true});box.addEventListener('touchend',e=>{if(startX===null)return;const delta=e.changedTouches[0].screenX-startX;if(Math.abs(delta)>55)move(delta>0?-1:1);startX=null},{passive:true})})();</script>
+<style id="mobile-legend-pages-v2">
+@media(max-width:720px){
+ #legend .legend-book.illustrated-book{display:none!important}
+ #legend .mobile-legend-book{display:block}
+}
+@media(min-width:721px){#legend .mobile-legend-book{display:none!important}}
+#legend .mobile-legend-book{width:100%;max-width:540px;margin:20px auto 0;color:#3c2515}
+#legend .mobile-legend-leaf{display:none;position:relative;overflow:hidden;border-radius:9px;box-shadow:0 7px 24px #0009;background-color:#ead5a7;background-image:url('legend-book.jpg');background-repeat:no-repeat}
+#legend .mobile-legend-leaf.active{display:block;animation:mobileLeafTurn .3s ease-out}
+@keyframes mobileLeafTurn{from{opacity:.55;transform:perspective(850px) rotateY(-7deg)}to{opacity:1;transform:perspective(850px) rotateY(0)}}
+#legend .mobile-legend-cover{aspect-ratio:1536/1024;background-size:100% 100%;}
+#legend .mobile-legend-cover-title{position:absolute;top:27%;left:54%;width:28%;font:normal clamp(14px,4.1vw,24px)/1.35 Wolgadeutsche,Georgia,serif;text-align:center;color:#492b14;text-shadow:0 1px 2px #f4deb2}
+#legend .mobile-legend-story{aspect-ratio:768/1024;background-size:200% 100%;background-position:right center;}
+#legend .mobile-legend-story-text{position:absolute;top:17%;left:16%;right:16%;bottom:25%;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;scrollbar-width:thin;box-sizing:border-box;padding:7px 6px;background:rgba(246,225,179,.78);border-radius:3px;color:#3c2515;font:normal clamp(15px,4vw,21px)/1.48 Georgia,serif;overflow-wrap:break-word}
+#legend .mobile-legend-controls{display:flex;align-items:center;justify-content:center;gap:14px;padding:14px 5px;background:#342117;border:1px solid #a47a46;border-radius:0 0 9px 9px}
+#legend .mobile-legend-controls button{background:#dbb879;color:#2b1c10;border:1px solid #b68b50;border-radius:6px;padding:10px 12px;font:600 15px Georgia,serif;cursor:pointer}
+#legend .mobile-legend-controls button:disabled{opacity:.4;cursor:default}
+#legend .mobile-legend-counter{color:#f4dfb4;min-width:48px;text-align:center;font:15px Georgia,serif}
+@media(max-width:380px){#legend .mobile-legend-story-text{font-size:14px;line-height:1.4;top:16%;bottom:24%}#legend .mobile-legend-controls{gap:7px}}
+@media(prefers-reduced-motion:reduce){#legend .mobile-legend-leaf.active{animation:none}}
+</style>
+<script id="mobile-legend-pages-script">
+(function(){
+ const section=document.getElementById('legend');
+ const original=section&&section.querySelector('.legend-book.illustrated-book');
+ if(!original)return;
+ const mobile=document.createElement('div');mobile.className='mobile-legend-book';
+ mobile.setAttribute('aria-label','Легенда Приюта Дракона');
+ const groups={};const indexes={ru:0,de:0};
+ ['ru','de'].forEach(lang=>{
+  const source=original.querySelector('.storybook-language[data-book-lang="'+lang+'"]');
+  const texts=[...source.querySelectorAll('.book-page-right .book-ink-text')].map(e=>e.textContent.trim());
+  const leaves=[];
+  const cover=document.createElement('div');cover.className='mobile-legend-leaf mobile-legend-cover';
+  const title=document.createElement('div');title.className='mobile-legend-cover-title';
+  title.textContent=lang==='ru'?'Легенда Приюта Дракона':'Die Legende vom Drachenhaus';
+  cover.appendChild(title);leaves.push(cover);
+  texts.forEach(t=>{const leaf=document.createElement('div');leaf.className='mobile-legend-leaf mobile-legend-story';const ink=document.createElement('div');ink.className='mobile-legend-story-text';ink.textContent=t;leaf.appendChild(ink);leaves.push(leaf)});
+  groups[lang]=leaves;
+  leaves.forEach(leaf=>mobile.appendChild(leaf));
+ });
+ const controls=document.createElement('div');controls.className='mobile-legend-controls';
+ const prev=document.createElement('button');prev.type='button';
+ const count=document.createElement('span');count.className='mobile-legend-counter';count.setAttribute('aria-live','polite');
+ const next=document.createElement('button');next.type='button';
+ controls.append(prev,count,next);mobile.appendChild(controls);
+ original.insertAdjacentElement('afterend',mobile);
+ function update(){const lang=document.documentElement.lang==='de'?'de':'ru';
+  Object.entries(groups).forEach(([l,leaves])=>leaves.forEach((leaf,i)=>leaf.classList.toggle('active',l===lang&&i===indexes[l])));
+  const i=indexes[lang];prev.disabled=i===0;next.disabled=i===groups[lang].length-1;
+  prev.textContent=lang==='de'?'❮ Zurück':'❮ Назад';next.textContent=lang==='de'?'Weiter ❯':'Далее ❯';
+  count.textContent=(i+1)+' / '+groups[lang].length;
+ }
+ prev.onclick=()=>{const l=document.documentElement.lang==='de'?'de':'ru';indexes[l]=Math.max(0,indexes[l]-1);update()};
+ next.onclick=()=>{const l=document.documentElement.lang==='de'?'de':'ru';indexes[l]=Math.min(groups[l].length-1,indexes[l]+1);update()};
+ new MutationObserver(update).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});update();
+})();
+</script>
+</body></html>
