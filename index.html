@@ -264,6 +264,12 @@ document.getElementById('gram-open').onclick=e=>{opener=e.currentTarget;overlay.
  #legend .mobile-legend-leaf:nth-child(9) .mobile-legend-story-text,
  #legend .mobile-legend-leaf:nth-child(10) .mobile-legend-story-text{top:calc(17% + 36px);bottom:calc(29% - 36px);}
 }
+
+/* Mobile book: lower pages 3 and 4 by one additional text line */
+@media(max-width:760px){
+ #legend .mobile-legend-leaf:nth-child(3) .mobile-legend-story-text{top:calc(17% + 18px);bottom:calc(29% - 18px);}
+ #legend .mobile-legend-leaf:nth-child(4) .mobile-legend-story-text{top:calc(17% + 36px);bottom:calc(29% - 36px);}
+}
 </style>
 <script id="mobile-legend-pages-script">
 (function(){
